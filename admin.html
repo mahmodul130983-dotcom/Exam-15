@@ -657,7 +657,7 @@
     // Delete Single Record
     function deleteSingleRecord(docId, studentName) {
       if (confirm(`আপনি কি '${studentName}'-এর এই রেজাল্টটি ডিলিট করতে চান?`)) {
-        db.collection("quiz_results 14").doc(docId).delete()
+        db.collection("quiz_results 15").doc(docId).delete()
         .then(() => {
           fetchResults();
         })
@@ -673,7 +673,7 @@
       if (confirm(`আপনি কি সিলেক্ট করা ${count}টি রেকর্ড ডিলিট করতে চান?`)) {
         const batch = db.batch();
         selectedDocIds.forEach(id => {
-          const docRef = db.collection("quiz_results 10").doc(id);
+          const docRef = db.collection("quiz_results 15").doc(id);
           batch.delete(docRef);
         });
 
